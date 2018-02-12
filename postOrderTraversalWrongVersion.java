@@ -20,8 +20,8 @@ root node(1), so we couldn't use this marking method to traverse its left subtre
    2    3
  /  \   / \
 6   9   4  5
-    / \
-   7   8
+       / \
+      7   8
 
 */        
          
