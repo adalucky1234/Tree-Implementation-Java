@@ -8,7 +8,7 @@ import java.math.BigInteger;
 import java.util.*;
 
 
-public class Main {
+public class postOrderTraversal {
 
     public static void main(String[] args) {
         // write your code here
