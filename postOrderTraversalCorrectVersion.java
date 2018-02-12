@@ -9,8 +9,8 @@ For this example tree, we get the expected result: 6 9 2 7 8 4 5 3 1
    2    3
  /  \   / \
 6   9   4  5
-    / \
-   7   8
+       / \
+      7   8
 
 */
 
