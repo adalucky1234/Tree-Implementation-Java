@@ -1,13 +1,25 @@
-package com.company;
+/* This algorithm is to implement postOrder traversal of a tree using one stack. 
+First, push root into stack, mark it as curcode;
 
-import com.sun.deploy.resources.Deployment_pt_BR;
+Then, check if cur has right child, if does, then push its right child, mark cur as parent node, update cur node's right 
+child to cur node, continue this loop until cur doesn't have a right child;
 
-import java.lang.annotation.ElementType;
-import java.lang.reflect.Array;
-import java.math.BigInteger;
-import java.util.*;
+Then go back to parent node, if parent exits and parent has left child, then recursively call the algorithm, pass parent's 
+left child as parameter.
 
+Finally, the stack is built up.
 
+The example tree is as following: the expected printed results is 7 8 4 5 3 1 
+     1
+    / \
+   2   3
+      / \
+     4   5
+    / \
+   7   8
+
+*/        
+         
 public class postOrderTraversal {
 
     public static void main(String[] args) {
@@ -34,18 +46,17 @@ class TreeNode {
 
 class Solution {
     Stack<TreeNode> s = new Stack<>();
-
     public void postOrder(TreeNode root) {
         if (root == null) return;
         TreeNode cur = root;
-        TreeNode parent = null;
-        s.push(cur);
+        TreeNode parent = null; // for the footprint of cur, mark each of its step as parent node, in order to conveniently get 
+        s.push(cur);            // back whenever cur reaches null.
         while (cur.right != null) {
             s.push(cur.right);
             parent = cur;
             cur = cur.right;
         }
-        //if (cur.right == null) return;
+       // add parent != null, otherwise it throws nullpoint exception
         if (parent != null && parent.left != null) {
             postOrder(parent.left);
         }
