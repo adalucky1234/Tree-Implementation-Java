@@ -1,13 +1,23 @@
 /**
-This algorithm is to implement pre-Order traversal of a tree using one stack. 
-This method is same as postOrderTraversal.java (please check the class for details)
-Using recursion to get the expected result : 6 -1 10 2 9 1 7 4 8 3 5 
+This algorithm is to implement In-Order traversal of a tree using one stack. 
+This method is same as postOrderTraversal.java (please check the class for details.
 
+The example tree is as following: using this algorithm, we get the expected result: 6 -1 10 2 9 1 7 4 8 3 5 
+
+               1
+            /     \
+           2       3
+         /  \     / \
+        6   9    4   5
+         \      / \
+          10   7   8
+          /
+         -1
 
 */
 
 
-public class Main {
+public class inOrderTraversalRecursion {
 
     public static void main(String[] args) {
         // write your code here
