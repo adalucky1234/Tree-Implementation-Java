@@ -1,7 +1,7 @@
 /**
 This algorithm is to implement in order traversal of tree using one stack.
 First, if root != null, then push root into stack.
-Then, iteratively check its left child is null, if not, push into stack, update it to its left child, until it reaches null.
+Then, iteratively check its left child is null, if not, push into stack, update it to its left child, until root reaches null.
 When reach a point that a root doesn't have left child, pop stack, mark as tmp, add to list, then see if tmp has right child.
 If tmp's right child is not null, then recursively call this function.
 */
@@ -50,16 +50,16 @@ class Solution {
 
     public void inOrderTraversal(TreeNode root) {
         if (root == null) return;
-        s.push(root);
-        while (root.left != null) {
-            s.push(root.left);
+        s.push(root);   // First, if root != null, then push root into stack.
+        while (root.left != null) {  //Then, iteratively check its left child is null,
+            s.push(root.left);       //if not, push into stack, update it to its left child, until root reaches null
             root = root.left;
             if (root == null) break;
         }
         while (!s.isEmpty()) {
-            tmp = s.pop();
+            tmp = s.pop(); // when root doesn't have left child, pop stack, mark as tmp, add to list
             list.add(tmp.val);
-            if (tmp.right != null) {
+            if (tmp.right != null) {  // If tmp's right child is not null, then recursively call this function.
                 inOrderTraversal(tmp.right);
             }
         }
