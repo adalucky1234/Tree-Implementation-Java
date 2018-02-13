@@ -17,7 +17,7 @@ The example tree is as following: using this algorithm, we get the expected resu
 */
 
 
-public class inOrderTraversalRecursion {
+public class Main {
 
     public static void main(String[] args) {
         // write your code here
