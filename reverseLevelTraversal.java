@@ -5,6 +5,17 @@ this does bottom-up manner. So I use one stack and one queue.
 First, offer root into queue, then poll it into stack, if it has right child, offer into queue, then come left child.
 Then, we follow the same procedure as above until queue is empty.
 Finally, we take out all nodes from stack.
+The example tree is as following: using this algorithm, we get the expected result: -1 10 7 8 6 9 4 5 2 3 1 
+               1
+            /     \
+           2       3
+         /  \     / \
+        6   9    4   5
+         \      / \
+          10   7   8
+          /
+         -1
+
 
 
 */
@@ -29,12 +40,8 @@ public class Main {
         root.right.left = new TreeNode(4);
         root.right.left.left = new TreeNode(7);
         root.right.left.right = new TreeNode(8);
-        //ArrayList<Integer> list = solution.getList(root);
+      
         solution.stackList(root);
-        /*while (!solution.s.isEmpty()) {
-            TreeNode t = solution.s.pop();
-            solution.list.add(t.val);
-        }*/
         for (int i = 0 ; i < solution.list.size(); i++) System.out.print(solution.list.get(i) + " ");
     }
 }
