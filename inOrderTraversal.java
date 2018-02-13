@@ -4,6 +4,18 @@ First, if root != null, then push root into stack.
 Then, iteratively check its left child is null, if not, push into stack, update it to its left child, until root reaches null.
 When reach a point that a root doesn't have left child, pop stack, mark as tmp, add to list, then see if tmp has right child.
 If tmp's right child is not null, then recursively call this function.
+
+The example tree is as following: using this algorithm, we get the expected result: 6 -1 10 2 9 1 7 4 8 3 5 
+
+               1
+            /     \
+           2       3
+         /  \     / \
+        6   9    4   5
+         \      / \
+          10   7   8
+          /
+         -1
 */
 
 import java.util.*;
